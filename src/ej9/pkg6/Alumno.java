@@ -64,7 +64,7 @@ public class Alumno {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduzca las notas del alumno: ");
         for (int i = 0; i < 5; i++) {
-            System.out.println("Nota " + (i + 1));
+            System.out.println("Nota " + (i));
             nota = teclado.nextDouble();
 
             if (nota < 0 || nota > 10) {
@@ -100,7 +100,7 @@ public class Alumno {
         System.out.println("Alumno: " + this.nombre);
         System.out.println("Notas: ");
         for (int i = 0; i < notas.size(); i++) {
-            System.out.println(this.notas.indexOf(i));
+            System.out.println(this.notas.get(i));
         }
     }
 }

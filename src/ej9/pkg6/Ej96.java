@@ -9,9 +9,7 @@ public class Ej96 {
 
     public static void main(String[] args) {
         Alumno alu = new Alumno("Pedro");
-        ArrayList <Double> notas = new ArrayList<>();
 
-        System.out.println("Introduzca las notas del alumno");
         try {
             alu.pedirNotas();
         } catch (RangoException ex) {
