@@ -80,10 +80,10 @@ public class Alumno {
      * @param nota nota que se introducira como parametro y sustituira a la que estuviese anteriormente
      * @throws RangoException Excepcion que controla que el rango de notas o posicion son correctos
      */
-    public void modificarNota(int posicion, double nota) throws RangoException {
+    public void modificarNota(int posicion, double nota) throws RangoException,IndexOutOfBoundsException  {
 
-        if (posicion < 0 || posicion > 5) {
-            throw new RangoException("La posicion no existe");
+         if (posicion < 0 || posicion > num_asignaturas){
+             throw new IndexOutOfBoundsException("Error al rellenar el ArrayList");
         } else {
             if (nota < 0 || nota > 10) {
                 throw new RangoException("La nota esta fuera del rango permitido");
