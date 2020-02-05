@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * Clase que representa al alumno
+ *
  * @author enriq
  */
 public class Alumno {
@@ -50,11 +51,14 @@ public class Alumno {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    /**
-     * Metodo que pide al usuario las notas del alumno y las introduce en el Array que contiene estas
-     * @throws RangoException Excepcion que controla que el rango de las notas introducidas sea correcto
-     */
 
+    /**
+     * Metodo que pide al usuario las notas del alumno y las introduce en el
+     * Array que contiene estas
+     *
+     * @throws RangoException Excepcion que controla que el rango de las notas
+     * introducidas sea correcto
+     */
     public void pedirNotas() throws RangoException {
         double nota;
         Scanner teclado = new Scanner(System.in);
@@ -68,6 +72,35 @@ public class Alumno {
             } else {
                 notas.add(nota);
             }
+        }
+    }
+    /**
+     * Metodo que cambia la nota de algun alumno
+     * @param posicion posicion del Array de notas que indica que nota se quiere cambiar
+     * @param nota nota que se introducira como parametro y sustituira a la que estuviese anteriormente
+     * @throws RangoException Excepcion que controla que el rango de notas o posicion son correctos
+     */
+    public void modificarNota(int posicion, double nota) throws RangoException {
+
+        if (posicion < 0 || posicion > 5) {
+            throw new RangoException("La posicion no existe");
+        } else {
+            if (nota < 0 || nota > 10) {
+                throw new RangoException("La nota esta fuera del rango permitido");
+            } else {
+                notas.set(posicion, nota);
+            }
+        }
+    }
+    /**
+     * Metodo que imprime en pantalla las calificaciones del alumno
+     */
+    
+    public void imprimirCalificaciones (){
+        System.out.println("Alumno: " + this.nombre);
+        System.out.println("Notas: ");
+        for (int i = 0; i < notas.size(); i++) {
+            System.out.println(notas.indexOf(i));
         }
     }
 }
