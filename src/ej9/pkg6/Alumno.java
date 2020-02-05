@@ -12,7 +12,7 @@ public class Alumno {
 
     private static int num_asignaturas = 5;
     private String nombre;
-    private ArrayList<Double> notas;
+    private ArrayList <Double> notas;
 
     /**
      * Constructor por defecto de Alumno
@@ -100,7 +100,7 @@ public class Alumno {
         System.out.println("Alumno: " + this.nombre);
         System.out.println("Notas: ");
         for (int i = 0; i < notas.size(); i++) {
-            System.out.println(notas.indexOf(i));
+            System.out.println(this.notas.indexOf(i));
         }
     }
 }
